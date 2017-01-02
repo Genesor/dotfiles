@@ -2,6 +2,7 @@
 export CLICOLOR=1
 #export PS1="\h:\w$ "
 export EDITOR=nano
+
 parse_git_branch() {
 
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
@@ -13,35 +14,22 @@ export PS1="~ [\$(date +%k:%M)] \[\033[00m\]\W\[\033[32m\]\$(parse_git_branch) \
 # Set colors to match iTerm2 Terminal Colors
 export TERM=xterm-256color
 
-#export PATH=/usr/local/bin:$PATH
-
-#export JAVA_HOME="/usr/libexec/java_home -v 1.8.0_45"
-
 
 if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
+
 if [ -f $(brew --prefix)/etc/bash_completion ]
 then
   . $(brew --prefix)/etc/bash_completion
 fi
 
-export HOSTFILE="$HOME/.bbchosts_completion/hosts.cache"
-
 # then, do the sourcing of bash_completion
 source /usr/local/etc/bash_completion
-
-_bbchostcache="$HOME/.bbchosts_completion/hosts.cache"
-
-export COMP_KNOWN_HOSTS_WITH_HOSTFILE='yes'
-export HOSTFILE="$_bbchostcache"
 
 for rc in /etc/bash_completion /usr/local/etc/bash_completion /usr/share/bash-completion/bash_completion; do
     [ -f $rc ] && source $rc
 done
-
-alias bbcupdatehostcache="(cd $(dirname $_bbchostcache) && ./update.sh && echo 'restart your shell')"
-
 
 
 # Homebrew Python instead of Apple's
@@ -82,15 +70,6 @@ alias fuck='eval $(thefuck $(fc -ln -1))'
 alias rootphp='sudo killall -9 php-fpm && sudo /usr/local/opt/php56/sbin/php-fpm --fpm-config /usr/local/etc/php/5.6/php-fpm.conf'
 
 alias py='python'
-source /Users/Ben/.iterm2_shell_integration.bash
-
-# The next line updates PATH for the Google Cloud SDK.
-source '/Users/Ben/google-cloud-sdk/path.bash.inc'
-
-# The next line enables bash completion for gcloud.
-source '/Users/Ben/google-cloud-sdk/completion.bash.inc'
-# Bashmarks
-source ~/.local/bin/bashmarks.sh
 
 export CASSANDRA_HOME=/space/experiments/cassandra
 export CASSANDRA_BIN=$CASSANDRA_HOME/bin
@@ -102,10 +81,4 @@ export PATH=$PATH:/usr/local/Cellar/node/0.10.32/bin
 export GOPATH=/space/go
 export GOBIN=/space/go/bin
 export PATH=$GOPATH:$GOBIN:$PATH
-eval $(bwatagan completions)
-
-LUNCHY_DIR=$(dirname `gem which lunchy`)/../extras
-if [ -f $LUNCHY_DIR/lunchy-completion.bash ]; then
-  . $LUNCHY_DIR/lunchy-completion.bash
-fi
 
