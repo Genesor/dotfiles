@@ -55,7 +55,7 @@ alias gowork='cd /space/products/workers'
 alias goprod='cd /space/products/'
 
 alias composer="php /usr/local/bin/composer.phar"
-alias subl="/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl"
+alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 alias brk="open -a Brackets"
 alias phpstorm="open -a PhpStorm"
 alias pycharm="open -a PyCharm"
@@ -78,7 +78,7 @@ export PATH=$CASSANDRA_BIN:$CASSANDRA_TOOLS_BIN:$M2:$PATH
 export PATH=$PATH:/usr/local/bin
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
 export PATH=$PATH:/usr/local/Cellar/node/0.10.32/bin
-export GOPATH=/space/go
-export GOBIN=/space/go/bin
+export GOPATH=$HOME/go_work
+export GOBIN=$GOPATH/bin
 export PATH=$GOPATH:$GOBIN:$PATH
 
