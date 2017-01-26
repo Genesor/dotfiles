@@ -43,6 +43,7 @@ alias pac='php app/console'
 alias finder='open -R .'
 alias gckm='git checkout master'
 alias gck='git checkout '
+alias gbr='git branch'
 alias grbm='git fetch -p;git rebase origin/master'
 alias gfp='git fetch -p'
 alias grb='git rebase origin '
@@ -81,4 +82,4 @@ export PATH=$PATH:/usr/local/Cellar/node/0.10.32/bin
 export GOPATH=$HOME/go_work
 export GOBIN=$GOPATH/bin
 export PATH=$GOPATH:$GOBIN:$PATH
-
+export PATH=/Users/ben/.bin:$PATH
