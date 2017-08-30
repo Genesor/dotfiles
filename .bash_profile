@@ -4,12 +4,12 @@ export CLICOLOR=1
 export EDITOR=nano
 
 parse_git_branch() {
-
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 
 }
+
 # 🌵
-export PS1="~ [\$(date +%k:%M)] \[\033[00m\]\W\[\033[32m\]\$(parse_git_branch) \[\033[01;32m\]>\[\033[01;33m\]>\[\033[01;35m\]> \[\033[00m\]"
+export PS1="$(pwd) \n ~ [\$(if [ \$? == 0 ]; then echo ✅; else echo ❌; fi) ] [\$(date +%k:%M)] \[\033[00m\]\W\[\033[32m\]\$(parse_git_branch) \[\033[01;32m\]>\[\033[01;33m\]>\[\033[01;35m\]> \[\033[00m\]"
 
 # Set colors to match iTerm2 Terminal Colors
 export TERM=xterm-256color
@@ -19,18 +19,9 @@ if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
 
-if [ -f $(brew --prefix)/etc/bash_completion ]
-then
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
 fi
-
-# then, do the sourcing of bash_completion
-source /usr/local/etc/bash_completion
-
-for rc in /etc/bash_completion /usr/local/etc/bash_completion /usr/share/bash-completion/bash_completion; do
-    [ -f $rc ] && source $rc
-done
-
 
 # Homebrew Python instead of Apple's
 #export	 PATH=/usr/local/bin:/usr/local/share/python:$PATH
@@ -63,6 +54,8 @@ alias pycharm="open -a PyCharm"
 alias sourcetree="open -a SourceTree"
 alias arduino="open -a Arduino"
 alias macdown="open -a MacDown"
+alias gog="open -a Gogland"
+alias vs="open -a \"Visual Studio Code\" ."
 
 alias petit-ecran="curl 192.168.34.158:3490 --data"
 
