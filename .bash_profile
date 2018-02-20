@@ -9,7 +9,7 @@ parse_git_branch() {
 }
 
 # 🌵
-export PS1="$(pwd) \n ~ [\$(if [ \$? == 0 ]; then echo ✅; else echo ❌; fi) ] [\$(date +%k:%M)] \[\033[00m\]\W\[\033[32m\]\$(parse_git_branch) \[\033[01;32m\]>\[\033[01;33m\]>\[\033[01;35m\]> \[\033[00m\]"
+export PS1="\[\033[01;33m\] ~ \w\[\e[0m\]\n ~ [\$(if [ \$? == 0 ]; then echo ✅; else echo ❌; fi) ] [\$(date +%k:%M)] \[\033[00m\]\W\[\033[32m\]\$(parse_git_branch) \[\033[01;32m\]>\[\033[01;33m\]>\[\033[01;35m\]> \[\033[00m\]"
 
 # Set colors to match iTerm2 Terminal Colors
 export TERM=xterm-256color
@@ -54,7 +54,7 @@ alias pycharm="open -a PyCharm"
 alias sourcetree="open -a SourceTree"
 alias arduino="open -a Arduino"
 alias macdown="open -a MacDown"
-alias gog="open -a Gogland"
+alias gog="open -a Goland"
 alias vs="open -a \"Visual Studio Code\" ."
 
 alias petit-ecran="curl 192.168.34.158:3490 --data"
@@ -72,7 +72,7 @@ export PATH=$CASSANDRA_BIN:$CASSANDRA_TOOLS_BIN:$M2:$PATH
 export PATH=$PATH:/usr/local/bin
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
 export PATH=$PATH:/usr/local/Cellar/node/0.10.32/bin
-export GOPATH=$HOME/go_work
+export GOPATH=/space/go
 export GOBIN=$GOPATH/bin
 export PATH=$GOPATH:$GOBIN:$PATH
 export PATH=/Users/ben/.bin:$PATH

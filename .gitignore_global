@@ -1,0 +1,7 @@
+.idea/*
+projectFilesBackup/*
+.DS_Store
+.idea/**
+.idea
+.vscode
+.vscode/**
