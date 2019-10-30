@@ -9,7 +9,7 @@ parse_git_branch() {
 }
 
 # 🌵
-export PS1="\[\033[01;33m\] ~ \w\[\e[0m\]\n ~ [\$(if [ \$? == 0 ]; then echo ✅; else echo ❌; fi) ] [\$(date +%k:%M)] \[\033[00m\]\W\[\033[32m\]\$(parse_git_branch) \[\033[01;32m\]>\[\033[01;33m\]>\[\033[01;35m\]> \[\033[00m\]"
+export PS1="\[\033[01;33m\] ~ \w\[\e[0m\]\n ~ [\$(if [ \$? == 0 ]; then echo ‣; else echo X; fi)] [\$(date +%k:%M)] \[\033[00m\]\W\[\033[32m\]\$(parse_git_branch) \[\033[01;32m\]>\[\033[01;33m\]>\[\033[01;35m\]> \[\033[00m\]"
 
 # Set colors to match iTerm2 Terminal Colors
 export TERM=xterm-256color
@@ -76,3 +76,4 @@ export GOPATH=/space/go
 export GOBIN=$GOPATH/bin
 export PATH=$GOPATH:$GOBIN:$PATH
 export PATH=/Users/ben/.bin:$PATH
+

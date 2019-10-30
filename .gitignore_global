@@ -5,3 +5,5 @@ projectFilesBackup/*
 .idea
 .vscode
 .vscode/**
+node_modules
+.tool-versions
