@@ -1,6 +1,5 @@
 #Set CLICOLOR if you want Ansi Colors in iTerm2
 export CLICOLOR=1
-#export PS1="\h:\w$ "
 export EDITOR=nano
 
 parse_git_branch() {
@@ -8,7 +7,6 @@ parse_git_branch() {
 
 }
 
-# 🌵
 export PS1="\[\033[01;33m\] ~ \w\[\e[0m\]\n ~ [\$(if [ \$? == 0 ]; then echo ‣; else echo X; fi)] [\$(date +%k:%M)] \[\033[00m\]\W\[\033[32m\]\$(parse_git_branch) \[\033[01;32m\]>\[\033[01;33m\]>\[\033[01;35m\]> \[\033[00m\]"
 
 # Set colors to match iTerm2 Terminal Colors
@@ -22,6 +20,8 @@ fi
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
 fi
+
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
 # Homebrew Python instead of Apple's
 #export	 PATH=/usr/local/bin:/usr/local/share/python:$PATH
